@@ -34,8 +34,8 @@ module.exports = {
             url: `https://www.linkedin.com/in/will-ayato-liu/`,
           },
           {
-            name: `YouTube(TBC)`,
-            url: `#`,
+            name: `YouTube`,
+            url: `https://www.youtube.com/channel/UCLwPfa9re6ovuqLxNcBIHvQ/`,
           },
           {
             name: `Instagram(TBC)`,
