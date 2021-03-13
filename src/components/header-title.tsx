@@ -21,13 +21,13 @@ const HeaderTitle = () => {
       >
         <div
           style={{
-            width: 50,
-            height: 50,
+            width: 60,
+            height: 60,
             backgroundImage:
               "url(https://avatars.githubusercontent.com/u/3542006?s=460&u=a69f3f307bce2651dcca4f959bcc5a6c232101cd&v=4)",
             backgroundSize: "cover",
-            borderRadius: "50%",
             marginRight: 16,
+            clipPath: "polygon(100% 23%, 2% 18%, 34% 94%)",
           }}
         ></div>
         {siteTitle}
