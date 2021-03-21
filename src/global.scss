@@ -1,0 +1,28 @@
+@keyframes spotlight {
+  0% {
+    //clip-path: circle(100% at 50% 50%);
+    clip-path: polygon(100% 23%, 2% 18%, 34% 94%);
+  }
+  25% {
+    clip-path: circle(20% at 50% 50%);
+  }
+  50% {
+    clip-path: circle(20% at 12% 84%);
+  }
+  75% {
+    clip-path: circle(20% at -30% 20%);
+  }
+  100% {
+    clip-path: circle(20% at 93% 51%);
+  }
+}
+
+.logo {
+  clip-path: polygon(100% 23%, 2% 18%, 34% 94%);
+}
+
+.animate {
+  .logo {
+    animation: 2s spotlight;
+  }
+}

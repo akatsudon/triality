@@ -10,6 +10,7 @@ module.exports = {
     siteTitleAlt: `Triality`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
@@ -37,10 +38,10 @@ module.exports = {
             name: `YouTube`,
             url: `https://www.youtube.com/channel/UCLwPfa9re6ovuqLxNcBIHvQ/`,
           },
-          {
-            name: `Instagram(TBC)`,
-            url: `#`,
-          },
+          // {
+          //   name: `Instagram(TBC)`,
+          //   url: `#`,
+          // },
         ],
       },
     },
@@ -54,9 +55,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `triality.me`,
+        short_name: `Triality`,
+        description: `Blog.`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
