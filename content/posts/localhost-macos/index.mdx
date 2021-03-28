@@ -1,0 +1,96 @@
+---
+title: Localhost macOS/iOS Safari testing on Windows
+date: 2021-03-28
+tags:
+  - Tutorial
+---
+
+Say you are developing a website or a web application on a Windows machine, but you don't have a Mac lying around or can't set it up on one. How would you go about testing your app to see how well it works on iOS devices? (Safari accounts for 24.8% mobile, 43.67% tablet, and 10.27% desktop browser market share worldwide in Feb 2021 according to StatCounter) - [BrowserStack](https://www.browserstack.com/live/features) to the rescue. It allows you to spin up real macOS and iOS devices within your browser with access to their native browsers and devtools as if you are using the real deal.
+
+## Why macOS/iOS localhost testing ?
+
+More often than not, you want to test your localhost build to fix things iteratively rather than deploying every potential fix you make. There are a few hoops you need to jump through to get it working for you :) It's due to Apple's security restriction around accessing localhost websites. This post uses an Angular app as an example.
+
+## Setup
+
+### 1. Enable BrowserStack local testing
+
+Follow this [offical guide](https://www.browserstack.com/docs/app-live/local-testing) to set up local site testing. Check you can access your local build in BrowserStack using IE11 or any non-Apple environment.
+
+### 2. macOS Safari - Serve your app with a supported port
+
+Serve your app using one of the following port numbers supported by BrowserStack. Otherwise, it simply won't reach your localhost.
+
+```noLineNumbers
+22
+80
+81
+443
+1337
+1859
+3000
+3002
+3030
+3128
+3306
+3333
+3621
+4000
+4502
+5000
+5757
+5790
+7774
+8000
+8001
+8080
+8081
+8082
+8083
+8084
+8085
+8086
+8443
+8760
+8888
+8899
+Any port between 9000 and 9100
+Any port between 9200 and 9400
+9876
+9877
+9880
+Any port between 9900 and 9999
+10002
+13260
+14357
+38946
+49772
+50208
+54134
+54136
+60778
+63342
+64000
+```
+
+[Source](https://www.browserstack.com/question/664)
+
+e.g.
+
+```noLineNumbers
+nx serve --port 9999
+```
+
+You should be able to visit your local site using Safari in different versions of macOS now.
+
+### 3. iPhone/iPad Safari - Disable Angular host check
+
+When it comes to testing on iPhone and iPad, BrowserStack goes around the iOS restriction using a bs-local.com custom domain. With Angular, you will need to include --disable-host-check to tell Angular's dev server it's cool to accept requests from bs-local.com.
+
+```noLineNumbers
+nx serve --port 9999 --disable-host-check
+```
+
+### 4. If you are using a 3rd party service
+
+If your app integrates with a 3rd party identity management service like Auth0, add your localhost address with the custom port number. For iOS devices, add the bs-local.com custom domain into the relevant configuration fields like CORS, redirectUrls, etc. So the service can communicate with your local app.
