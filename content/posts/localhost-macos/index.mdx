@@ -15,7 +15,7 @@ More often than not, you want to test your localhost build to fix things iterati
 
 ### 1. Enable BrowserStack local testing
 
-Follow this [offical guide](https://www.browserstack.com/docs/app-live/local-testing) to set up local site testing. Check you can access your local build in BrowserStack using IE11 or any non-Apple environment.
+Follow this [official guide](https://www.browserstack.com/docs/app-live/local-testing) to set up local site testing. Check you can access your local build in BrowserStack using IE11 or any non-Apple environment.
 
 ### 2. macOS Safari - Serve your app with a supported port
 
@@ -81,7 +81,7 @@ e.g.
 nx serve --port 9999
 ```
 
-You should be able to visit your local site using Safari in different versions of macOS now.
+Using port 9999 as the example, you should be able to visit your local site http://localhost:9999 using Safari in different versions of macOS now.
 
 ### 3. iPhone/iPad Safari - Disable Angular host check
 
@@ -91,6 +91,4 @@ When it comes to testing on iPhone and iPad, BrowserStack goes around the iOS re
 nx serve --port 9999 --disable-host-check
 ```
 
-### 4. If you are using a 3rd party service
-
-If your app integrates with a 3rd party identity management service like Auth0, add your localhost address with the custom port number. For iOS devices, add the bs-local.com custom domain into the relevant configuration fields like CORS, redirectUrls, etc. So the service can communicate with your local app.
+I will write another post covering specific configurations required when testing an app that integrates with Auth0.
