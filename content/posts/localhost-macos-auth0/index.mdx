@@ -1,0 +1,34 @@
+---
+title: Auth0 iPhone & iPad testing on Windows
+date: 2021-04-15
+tags:
+  - Tutorial
+---
+
+This post covers specific setups required for BrowserStack to reach your Angular localhost site that integrates with Auth0. For standard testing, refer to my [previous post](/localhost-mac-os-i-os-safari-testing-on-windows).
+
+## Setup
+
+In short, Auth0 doesn’t work with the bs-local.com custom domain BrowserStack uses to get around localhost address not being accessible on iOS devices(iPhone & iPad).
+
+To get around this:
+
+### 1. Serve your app using a private IP address
+
+Grab your private IP address from your network/wifi properties page then:
+
+```noLineNumbers
+nx serve --host [YOUR_IP]
+```
+
+### 2. Auth0 - Application Settings
+
+In Auth0 - Application Settings, add [YOUR_IP]:4200 to the:
+
+- Allowed Callback URLs
+- Allowed Web Origins
+- Allowed Origins (CORS) fields.
+
+In the Angular app.config.json, change the redirectUrl to [YOUR_IP]:4200.
+
+http://[YOUR_IP]:4200 should then load up in BrowserStack's iOS devices.
