@@ -35,9 +35,10 @@ module.exports = {
             url: `https://www.linkedin.com/in/will-ayato-liu/`,
           },
           {
-            name: `YouTube`,
-            url: `https://www.youtube.com/channel/UCLwPfa9re6ovuqLxNcBIHvQ/`,
+            name: `Playground`,
+            url: `http://triality.surge.sh/`,
           },
+          // https://www.youtube.com/channel/UCLwPfa9re6ovuqLxNcBIHvQ/
           // {
           //   name: `Instagram(TBC)`,
           //   url: `#`,
